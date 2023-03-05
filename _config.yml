@@ -9,7 +9,7 @@ baseurl:
 # Title of the Site
 title: Sam's Data Stories
 # Description of the Site
-description: Data Science Portfolio Site for Samuel T. Shanks, PhD
+description: A Data Science Portfolio Site for Samuel T. Shanks, PhD
 # URL of Image of the Site
 site-image: /WhatATheme/assets/images/meta.jpg
 # Keywords of the Site
@@ -23,16 +23,16 @@ heroimage: /assets/images/portofino.jpg
 # Social Media and Contact
 # If you don't want to use any icon, you can leave them blank.
 email: sshanks@fastmail.fm 
-facebook_username: /
+facebook_username:
 twitter_username: profshanks
-instagram_username: /
+instagram_username:
 linkedin_username: profshanks
 github_username:  profshanks
-youtube_channel_id: /
-reddit_username: /
-behance_username: /
-dribbble_username: /
-spotify_username: /
+youtube_channel_id:
+reddit_username:
+behance_username:
+dribbble_username:
+spotify_username:
 
 # Google Analytics
 google-analytics: UA-163806439-1
@@ -45,7 +45,7 @@ author-name: profshanks
 # URL for the Image of the Author
 author-image: /assets/images/Mad_Sam_disc.jpg
 # 60 Words About the Author
-author-about: In an ideal world, I would analyze data for NASA in the morning, design AI to guide robots in the afternoon, and go watch the sun set from a boat in the evening. I love collaboration; I love solving difficult problems; I am relentlessly curious.
+author-about: In an ideal world, I would analyze data for NASA in the morning, design AI to guide robots in the afternoon, and go watch a sunset from a boat in the evening. I love collaboration; I love solving difficult problems; I am relentlessly curious.
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
 author-url: https://github.com/profshanks
 
