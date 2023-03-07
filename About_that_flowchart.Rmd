@@ -1,0 +1,9 @@
+{::comment} The following block of near-random text was provided by mermaid.live. This is a nifty service that allows you to build complex flowcharts, and in the end it spits out a glob of markdown text that you can copy into a document.
+
+My guess is that the flowchart image itself lives on the mermaid.ink site, and that the following markdown text is operating in a manner similar to an <iframe> tag in HTML.
+
+The image forms a clickable link that will take you to the site where the chart was edited. {:/comment}
+
+[![](https://mermaid.ink/img/pako:eNqNkl9LwzAUxb_KJYJT2BCFvfRB0G1tHxTmfFyH3CW3W7VtSnIzKWPf3aRubIL_XkLI-Z2Tm0O2QmpFIhJ5qd_lGg3DwyyrLbclwQgsG_1GA4XWSwbbCIYwPMjJ73L6kwxwN5_BszRFwxbOYVzgymBlIfNabnQFU6NfSTKcXS9gMLiF8fwiSWFGjb7yzJPzY2p4xFUhLxch7_6_eTf7vGAa_WHKHTtDB-_RaN3Sk83aK8UG2fdQcOqW3XghtwunWn1B3bIs5ClpAxVDWJNuTY82GHeXTbYj3bSeLmmDNYfBekpL24NYl4rMLqCTDo3nvp8prsh24VFgybIvqn1RyLg4osk8_nzYvtETKf1OEn1RkamwUP6XbMNJJnhNFWUi8ltFObqSM5HVO4-iY_3c1lJEbBz1hWv89bQvV0Q5lpZ2HztIzxU?type=png)](https://mermaid.live/edit#pako:eNqNkl9LwzAUxb_KJYJT2BCFvfRB0G1tHxTmfFyH3CW3W7VtSnIzKWPf3aRubIL_XkLI-Z2Tm0O2QmpFIhJ5qd_lGg3DwyyrLbclwQgsG_1GA4XWSwbbCIYwPMjJ73L6kwxwN5_BszRFwxbOYVzgymBlIfNabnQFU6NfSTKcXS9gMLiF8fwiSWFGjb7yzJPzY2p4xFUhLxch7_6_eTf7vGAa_WHKHTtDB-_RaN3Sk83aK8UG2fdQcOqW3XghtwunWn1B3bIs5ClpAxVDWJNuTY82GHeXTbYj3bSeLmmDNYfBekpL24NYl4rMLqCTDo3nvp8prsh24VFgybIvqn1RyLg4osk8_nzYvtETKf1OEn1RkamwUP6XbMNJJnhNFWUi8ltFObqSM5HVO4-iY_3c1lJEbBz1hWv89bQvV0Q5lpZ2HztIzxU)
+
+![](images/image-1130727341.png)

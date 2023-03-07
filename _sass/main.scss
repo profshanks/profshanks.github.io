@@ -72,3 +72,16 @@ hr {
         }
     }
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+.eighty_pct {
+  display: block;
+  margin-right: auto;
+  width: 80%;
+}
