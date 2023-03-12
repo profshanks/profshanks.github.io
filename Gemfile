@@ -17,8 +17,10 @@ gem "webrick"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed"
-  gem 'jekyll-admin', "0.9.0"
+  gem 'jekyll-admin', group: :jekyll_plugins
 end
+
+# gem 'jekyll-admin', "0.9.0"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

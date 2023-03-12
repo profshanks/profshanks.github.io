@@ -2,12 +2,12 @@
 markdown: kramdown
 
 # URL of the Site
-url: ''
+url: 'http://localhost:4000'
 # Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
 baseurl: 
 
 # Title of the Site
-title: Sam's Data Stories
+title: Telling Stories with Data
 # Description of the Site
 description: A Data Science Portfolio Site for Samuel T. Shanks, PhD
 # URL of Image of the Site
@@ -92,3 +92,8 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  
+gem: [jekyll-admin]
+
+collections:
+  - SSP_Impact

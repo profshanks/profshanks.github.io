@@ -1,53 +1,50 @@
-# WhatATheme
-**WhatATheme** is a customizable Jekyll Portfolio theme which supports blogging. You can use this theme in order to create an elegant, fully responsive portfolio.
-
-#### You can checkout the [**Demo Here**](https://thedevslot.github.io/WhatATheme/) :boom:
-
-![WhatATheme](assets/images/meta.jpg)
-
-# Features :sparkles:
-* Free and Easy setup
-* No Coding Required
-* Compatible with [Github Pages](https://pages.github.com/)
-* Responsive and Blogging Ready
-* HTML Compressor using [Jekyll Compress HTML](https://jch.penibelst.de/)
-* Minified CSS using SaSS
-* CMS Admin Support using [Jekyll Admin](https://jekyll.github.io/jekyll-admin/)
-* Supports Latest [Jekyll 4.x](https://jekyllrb.com/) and [Bundler](https://bundler.io/)
-* Stylesheet built using SaSS
-* Comments using Disqus
-* Analytics using Google Analytics
-* Instant Search using [Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search/)
-
-# Installation :books:
-### System Requirements
-* [Ruby](https://www.ruby-lang.org/en/)
-* [Jekyll](https://jekyllrb.com/)
-> You can read **What is Jekyll** [**here**](https://thedevslot.github.io/WhatATheme/blog/what-is-jekyll-how-to-use-it)
-### Up and Running
-* Fork the [Repository](https://github.com/thedevslot/WhatATheme/)
-* Clone or download the repository into directory of your choice: `git clone https://github.com/thedevslot/WhatATheme.git`
-* Inside the directory run `bundle install`
-* Host WhatATheme locally by running `bundle exec jekyll s`
-
-> You can read **How to Install and use WhatATheme?** [**here**](https://thedevslot.github.io/WhatATheme/blog/how-to-install-whatatheme)
-
-[<img src="https://i.imgur.com/TVI946Z.png" width="250" />](https://youtu.be/VfPa2c9kwhQ)
-
+---
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-### Content Credits :green_heart:
-* [Hero Image](https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) used as a background image in the very first section of Homepage.
-* [Author Image](https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png) used in the Author Section.
-* [Font Awesome](https://fontawesome.com/)
-* [Poppins Font](https://fonts.google.com/specimen/Poppins)
-* [Memphis Pattern](https://www.freepik.com/free-vector/memphis-pattern-background_4034913.htm#page=1&query=memphis%20pattern&position=23) used for some Social Media Images and the Favicon.
+# Telling Stories with Data
 
----
+#### A Data Science Portfolio Site for Samuel T. Shanks, PhD
 
-### Credits :bulb:
-* [Sneha Omer](http://sassyecoder.github.io/)
-* [Harsh Trivedi](http://harsh98trivedi.github.io/)
+<br><br>
 
-### License
-The contents of this repository are licensed under the [**GNU General Public License v2.0**](https://github.com/thedevslot/WhatATheme/blob/master/LICENSE)
+If you are actually reading the Readme.md file for this GitHub repo,
+then you are likely something of a coding nerd. I am always looking to
+learn from my more experienced comrades, so if you would like to
+exchange wisdom, [you can reach me via email quite
+easily.](mailto:sshanks@fastmail.fm)
+
+### A Few Disclaimers:
+
+-   This site is designed to be accessible to anyone with a curious mind
+    and an interest in data. I am hoping to show off how I approach
+    communicating data insights to non-data-junkies. If you want to see
+    "how the sausage got made," I have left links in the project-pages
+    to the code I used (typically in the form of Jupyter notebooks) to
+    clean, explore, and visualize the data
+-   I am a relentlessly curious person, and I live to learn new things.
+    As a result, the work found here will always show a bit more breadth
+    than depth. I can do depth; I have a PhD, but that is not want I am
+    doing here. This is my sandbox where I get to play.
+-   This is a portfolio site, not a peer-reviewed journal. While I
+    welcome emails from folks who notice errors, the primary purpose
+    here is to demonstrate how I approach data science & data
+    communication. I have not done extensive QA-work on the data itself.
+    Re-use the data found here at your own risk.
+
+### How did I do this?
+
+GitHub Pages sites are generated using Jekyll, which is a Ruby-based
+static-site generator. There are a number of open-source Jekyll themes
+out there, but this one is called [What a
+Theme](https://thedevslot.github.io/WhatATheme/) was developed by the
+smart folks at [thedevslot](https://github.com/thedevslot).
+
+I hit a few hiccups getting things rolling, but updating all of my
+dependencies seemed to allow the "<http://localhost:4000/admin>" feature
+to start working. This provides some GUI-based access to the
+site-building features, but it is pretty thin, and I mostly used it to
+help learn the system. Ultimately it is just as easy to write & edit the
+pages/posts/yml in VS-Code or R-Studio.
