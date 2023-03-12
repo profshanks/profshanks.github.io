@@ -1,3 +1,11 @@
+---
+title: "SSP Impact Study: Data Cleaning"
+layout: page
+---
+#### Note
+Since the data file for this project contains information protected by FERPA, I will not be including the original data files here.
+
+
 ```python
 import pandas as pd
 from IPython.display import display
@@ -316,8 +324,8 @@ raw['CLASS_TERM_DESCR'].value_counts()
     Fall 2020    103
     Spr 2022      81
     Spr 2021      65
-    Spr 2019      62
     Spr 2020      62
+    Spr 2019      62
     Name: CLASS_TERM_DESCR, dtype: int64
 
 
@@ -357,17 +365,17 @@ raw['CLASSES_TAKEN'].value_counts()
 
 
 
-    SSP1002-001:A                                  49
-    SSP1004-001:A                                  48
-    SSP1002-002:A                                  37
-    SSP1001-001:A                                  32
-    SSP1002-003:A                                  31
-                                                   ..
-    SSP1002-002:A,SSP1004-002:B-                    1
-    SSP1001-003:B-,SSP1002-002:A-,SSP1004-002:A     1
-    SSP1004-003:B+,SSP1052-002:B                    1
-    SSP1001-002:B+,SSP1004-003:A                    1
-    SSP1001-002:A,SSP1002-003:A,SSP1004-003:A-      1
+    SSP1002-001:A                                 49
+    SSP1004-001:A                                 48
+    SSP1002-002:A                                 37
+    SSP1001-001:A                                 32
+    SSP1002-003:A                                 31
+                                                  ..
+    SSP1001-003:A,SSP1004-003:A                    1
+    SSP1004-002:B-                                 1
+    SSP1001-003:B,SSP1002-003:B                    1
+    SSP1001-001:B+,SSP1002-001:B,SSP1004-001:A     1
+    SSP1002-001:C-                                 1
     Name: CLASSES_TAKEN, Length: 180, dtype: int64
 
 
@@ -472,8 +480,8 @@ raw['ENTRY_COLLEGE'].value_counts()
     LSBE        65
     SFA         33
     unknown     28
-    CLA          1
     CSE          1
+    CLA          1
     Name: ENTRY_COLLEGE, dtype: int64
 
 
@@ -506,9 +514,9 @@ raw['ENTRY_MAJOR'].value_counts()
 
     Undeclared                        161
     Pre Business                       58
-    Pre Psychology                     28
-    Biology B S                        28
     Communication B A                  28
+    Biology B S                        28
+    Pre Psychology                     28
     unknown                            28
     Biology B A                        26
     Psychology                         25
@@ -518,84 +526,84 @@ raw['ENTRY_MAJOR'].value_counts()
     Pre Integr Elem and Spec Ed        15
     Exercise Rehab Sci B A Sc          15
     Pre Law                            12
-    Mechanical Engineering             11
     Political Science B A              11
+    Mechanical Engineering             11
     Pre Studio Art                     10
     Pre Mechanical Engineering          9
     Environmental Science B S           8
     Chemical Engineering                8
-    Studio Art                          8
     Theatre B A                         8
+    Studio Art                          8
     Biochemistry B S                    7
     Pre Social Work                     7
     Social Work                         7
     English B A                         6
-    Public Hlth                         6
     Pre Public Health                   6
-    Music Education B Mus               5
-    Pre Accounting                      5
-    Mathematics B S                     5
-    Pre Civil Engineering               5
-    Journalism B A                      5
+    Public Hlth                         6
     Pre Undeclared Engineering          5
-    Envtl Outdoor Educ B A Sc           4
-    Graphic Design                      4
-    Integr Elem and Spec Ed             4
-    Pre Communication Sci/Disorder      4
-    Pre Physical Education              4
-    Pre Graphic Design                  4
-    Chemistry B S                       4
+    Pre Accounting                      5
+    Pre Civil Engineering               5
+    Music Education B Mus               5
+    Mathematics B S                     5
+    Journalism B A                      5
     Stats & Actuarial Science B S       4
-    Writing Studies B A                 3
-    Pre Art                             3
+    Envtl Outdoor Educ B A Sc           4
+    Integr Elem and Spec Ed             4
+    Pre Physical Education              4
+    Chemistry B S                       4
+    Graphic Design                      4
+    Pre Graphic Design                  4
+    Pre Communication Sci/Disorder      4
+    Civil Engineering B S C E           3
     Electrical Engineering              3
+    Geological Sciences B S             3
+    Writing Studies B A                 3
+    Biochemistry B A                    3
+    Pre Art                             3
     Pre Undeclared Science              3
+    Pre Teaching Communic Arts/Lit      3
+    Theatre B F A                       3
     History B A                         3
     International Studies B A           3
-    Geological Sciences B S             3
-    Civil Engineering B S C E           3
-    Biochemistry B A                    3
-    Theatre B F A                       3
-    Pre Teaching Communic Arts/Lit      3
-    Engineering Physics                 2
-    Philosophy B A                      2
-    Pre Teaching German                 2
-    Early Childhood B A Sc              2
-    Music                               2
-    Accounting                          2
-    Mechanical Engineering B S M E      2
-    Music B A                           2
-    Chinese Area Studies B A            2
-    Computer Science B A                2
     Civil Engineering                   2
+    Pre Teaching German                 2
+    Mechanical Engineering B S M E      2
+    Chinese Area Studies B A            2
     Sociology B A                       2
-    Cultural Entrepreneurship B A       2
+    Early Childhood B A Sc              2
     Linguistics B S                     2
-    Pre Engineering Physics             2
-    Teaching Social Studies             2
-    Communication Sci/Disorders         2
+    Accounting                          2
+    Philosophy B A                      2
     Physics B S                         2
-    Anthropology B A                    1
-    Electrical Engr B S E E             1
-    Pre Teaching Social Studies         1
-    Physics B A                         1
+    Pre Engineering Physics             2
+    Music B A                           2
+    Communication Sci/Disorders         2
+    Cultural Entrepreneurship B A       2
+    Music                               2
+    Teaching Social Studies             2
+    Engineering Physics                 2
+    Computer Science B A                2
     Pre Teaching Mathematics            1
-    American Indian Studies B A         1
-    Pre Unified Early Childhd Stud      1
-    Jazz Studies B Mus                  1
-    German Studies B A                  1
-    Teaching Communic Arts/ Litera      1
     Theory/Composition B Mus            1
-    Teaching Mathematics                1
-    Lower Division                      1
-    Pre Chemical Engineering            1
-    Environment Sustainability B A      1
-    Teaching Spanish                    1
-    Performance B Mus                   1
+    Electrical Engr B S E E             1
     Industrial Engineering              1
-    Pre Music                           1
-    French Studies B A                  1
+    Teaching Mathematics                1
+    Performance B Mus                   1
+    Pre Unified Early Childhd Stud      1
+    German Studies B A                  1
+    Lower Division                      1
+    American Indian Studies B A         1
     Art                                 1
+    Physics B A                         1
+    Pre Chemical Engineering            1
+    Pre Teaching Social Studies         1
+    Teaching Spanish                    1
+    Anthropology B A                    1
+    Environment Sustainability B A      1
+    Pre Music                           1
+    Teaching Communic Arts/ Litera      1
+    French Studies B A                  1
+    Jazz Studies B Mus                  1
     Name: ENTRY_MAJOR, dtype: int64
 
 
@@ -718,8 +726,8 @@ raw['DEGREE'].value_counts()
     B S E E     3
     B F A       2
     B S M E     2
-    B A A       1
     B Mus       1
+    B A A       1
     Name: DEGREE, dtype: int64
 
 

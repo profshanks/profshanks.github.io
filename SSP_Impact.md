@@ -34,7 +34,7 @@ At our institution, access to the data warehouse is strictly controlled, and we 
 - We also collected an array of demographic & background data for each student
 
 ## Data Cleaning & Exploration
-Not everyone gets excited about data cleaning, but if you are one of those folks, you can [check out this Jupyter notebook.](/SSP_Impact/Data_Cleaning.md)  
+Not everyone gets excited about data cleaning, but if you are one of those folks, you can [check out this Jupyter notebook.](/SSP_Impact/Data_Cleaning)  
 
 Long-story-short, I deleted an unnecessary column, corrected the data types, dealt with the null values, and otherwise made the world safe for data exploration
 <br><br>
