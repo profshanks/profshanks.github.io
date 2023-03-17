@@ -2,10 +2,12 @@
 title: "SSP Impact Study: Data Cleaning"
 layout: page
 ---
+
+[Return to main page for the study](../SSP_Impact)
+
 #### Note
 Since the data file for this project contains information protected by FERPA, I will not be including the original data files here.
 
-[Return to main page for the study](../SSP_Impact)
 
 ```python
 import pandas as pd
