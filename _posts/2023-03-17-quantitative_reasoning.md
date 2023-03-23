@@ -24,7 +24,7 @@ Math is an interesting game that we can teach a human brain to participate in, b
 
 ## Backyard Astronomy 101
 
-"As endless as the stars in the night sky" is a common way to poetically invoke infinity. I am fortunate to live northern Minnesota, an area where access to truly dark skies is a luxury I cherish. To lie on the earth on a crisp autumn night, gazing up at that carpet of stars is to understand what the Romantic poets really meant when they started throwing the word "awesome" around. The number of stars you can see surpasses our ability to really comprehend them.
+"As endless as the stars in the night sky" is a common way to poetically invoke the concept of infinity. I am fortunate to live northern Minnesota, an area where access to truly dark skies is a luxury I cherish. To lie on the earth on a crisp autumn night, gazing up at that carpet of stars is to understand what the Romantic poets really meant when they started throwing the word "awesome" around. The number of stars you can see surpasses our ability to really comprehend them.
 
 But that is not what infinity actually looks like. We've counted those stars, and the number visible to my human eyes while looking up at the autumn sky in northern Minnesota is not in the millions, it is three orders of magnitude below that. The number of stars visible to the naked eye on any given night under optimal conditions is only around 2,500. But it FEELS infinite. 
 
