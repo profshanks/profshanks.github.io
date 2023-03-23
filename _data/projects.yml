@@ -1,6 +1,6 @@
 - name: Student Success?
   image: ../SSP_Impact/horiz_art.jpg
-  link: ssp_impact.html
+  link: ../SSP_Impact
   description: An exploration of the impact of 1000-level SSP courses on student success
 - name: Boo
   link: boo.html
