@@ -1,10 +1,10 @@
 ---
-title: Can a Neural Network & a Belonging Survey Predict First-Year Student Retention
+title: Can a Neural Network & a Belonging Survey Predict First-Year Student Retention?
 layout: page
 menu: main
 ---
 
-<img src="/SSP_Impact/horiz_art.jpg" width=360>
+<img src="assets/neural_net.png" width=360>
 <br><br>
 #### Actionable Insights from this Project:
 
@@ -21,6 +21,7 @@ Strategies for targeting "at risk" students abound as do the theories of how bes
 
 None of these methods directly account for one of the primary reasons why students leave: they just don't feel like they belong. Low academic performance in the first semester of college is as likely to be the result of a lack of social adhesion to the campus as it is an indication of academic ability, and the demographic characteristics that correlate with low First-Year retention numbers are rarely interrogated for their underlying causal factors: students coming to universities optimized for the comfort of upper-middle-class white students often feel like outsiders, and their sense of social adhesion suffers. In short, they don't feel as if they "belong."
 
+
 #### The Proposition
 
 What if we could identify students whose sense of belonging was already beginning to fall behind during their first month at the university? What if we could specifically target the students least-likely to return the following Fall during a period when their view of the university was still highly malleable?
@@ -29,7 +30,13 @@ What makes one student feel as if they belong tends to be as idiosyncratic as th
 
 
 #### The Project
-Neural Networks are a fabulous solution when you have a variety of data points that all seem to be pertinent to a predictive question, but you are not sure HOW pertinent they are. Using machine learning techniques to...
+Neural networks are a fabulous solution when you have a variety of data points that all seem to be pertinent to a predictive question, but you are not sure HOW pertinent they are individually. Using machine learning techniques to determine the relative predictive weights of data points can provide a useful degree of predictive power.
+
+For this project the neural networks will be use a logistic regression model to predict which students are likely to depart from the university within the first year. In order to minimize the number of "false-negative" results (students who would be classified as "staying" but whom would actually leave), we will be locating the classification boundary closer to the "leaving" end of the spectrum. This will naturally result in an increased number of false-positive results, and the impact of that will have to be studied subsequently.
+
+We can also run this same model to assess students' likelihood of departing at the end of the first semester. Students flagged under this model might be considered higher-priority and might require different services.
+
+
 
 #### The Data
 
