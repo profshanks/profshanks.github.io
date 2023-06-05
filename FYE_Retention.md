@@ -4,7 +4,7 @@ layout: page
 menu: main
 ---
 
-<img src="assets/neural_net.png" width=360>
+<img src="/FYE_Retention/neural_net.png" width=360>
 <br><br>
 #### Actionable Insights from this Project:
 
