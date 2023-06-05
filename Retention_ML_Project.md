@@ -29,14 +29,7 @@ What makes one student feel as if they belong tends to be as idiosyncratic as th
 
 
 #### The Project
-The goal of this project was to try to assess whether or not the 1000 courses are helping the students in general terms.   
-
-The courses examined in this study were as follows:
-- SSP 1001: Reading Hacks for College (1 credit)
-- SSP 1002: Managing Time and Stress (1 credit)
-- SSP 1004: Studying, Note Taking, & Test Taking (1 credit)
-- SSP 1052: Academic Reading and Writing at the College Level (3 credits)
-<br><br>
+Neural Networks are a fabulous solution when you have a variety of data points that all seem to be pertinent to a predictive question, but you are not sure HOW pertinent they are. Using machine learning techniques to...
 
 #### The Data
 At our institution, access to the data warehouse is strictly controlled, and we are not allowed to run our own SQL queries. Instead, we have to make text-based requests for data. This is what we requested:
