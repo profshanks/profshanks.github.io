@@ -4,7 +4,11 @@ layout: page
 menu: main
 ---
 
+<<<<<<< HEAD:FYE_Retention.md
 <img src="/FYE_Retention/neural_net.png" width=360>
+=======
+<img src="/assets/neural_net.png" width=360>
+>>>>>>> 2e7600fa4b94534784f3e08ece1242a3ef3ad85c:Retention_ML_Project.md
 <br><br>
 #### Actionable Insights from this Project:
 
