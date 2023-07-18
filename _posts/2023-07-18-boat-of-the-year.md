@@ -2,7 +2,7 @@
 title: Charting Boat of the Year
 layout: post
 post-image: "../assets/images/BotY/Running_w_Scissors_artistic.JPEG"
-description: Little tweaks matter when telling a story
+description: Small changes can matter a lot when telling a story with data
 tags:
 - data visualization
 - storytelling
@@ -48,11 +48,11 @@ The Boat of the Year competition is scored very differently from the other serie
 
 At the midpoint of the season my spreadsheet looks like this:
 
-<img src="../assets/images/BotY/BOTY_midpoint.png" class="center" width="720"/><br> <br> <br>
+<img src="../assets/images/BotY/BOTY_midpoint.png" class="eighty_pct"/><br> <br> <br>
 
 All of the data thay you could ever want is right there! But that table is not doing a great job of telling the story of the first half of the season. This would be a fine time for a line chart that shows the accumulation of points for the season thus far:
 
-<img src="../assets/images/BotY/Chart_1.png" class="center" width="720"/><br> <br> <br>
+<img src="../assets/images/BotY/Chart_1.png" class="eighty_pct"/><br> <br> <br>
 
 This is about as boiler-plate as charts come; pure Plotly. The colors are pretty, and if you show this to people it is such a HUGE leap up from the spreadsheet table that you will generally get a positive response. But this could be better...
 
@@ -61,21 +61,21 @@ This is about as boiler-plate as charts come; pure Plotly. The colors are pretty
 
 For starters, the chart is too narrow, you can't even read the labels on the x-axis. Adding `figsize=(12,6)` to the initial plot constructor makes a big difference already:
 
-<img src="../assets/images/BotY/Chart_2.png" class="center" width="720"/><br> <br> <br>
+<img src="../assets/images/BotY/Chart_2.png" class="eighty_pct"/><br> <br> <br>
 
-My biggest issue with this line chart is the use of color. These colors are bright and easy to read, but they don't mean anything aside from identifying which boat goes with each line. 
+My biggest issue with this line chart is the use of color. These colors are bright and easy to read, but **they don't mean anything** aside from identifying which boat goes with each line. 
 
-But, they are not helping to tell the story of the competition at this point in the season. If we assume that my audience for this chart is my skipper and the rest of the crew, then the fate of Polar Bear and its near-competitors matters more than the fate of most of the other boats. 
+These colors are not helping to tell the story of the competition at this point in the season. If we assume that my audience for this chart is my skipper and the rest of the crew, then the fate of Polar Bear and its near-competitors matters more than the fate of most of the other boats. 
 
-Contrast will be important here, but so will connotation. Most of Polar Bear's spinnakers and decrorative accents are blue, and her deck is painted light blue. So she should be blue. Our nearest competitor sprouts a purple spinnaker for her downwind runs, so Papa Gaucho II's line should be purple. The other boats matter less. I'm going to make the next two closest competitors stand out a little as we are "keeping and eye" on them, but the other four boats matter much less. So let's keep their data there, but lets make it receed into the background:
+Contrast will be important here, but so will connotation. Most of Polar Bear's spinnakers and decrorative accents are blue, and her deck is painted light blue. So her line on the chart should be blue. Our nearest competitor sprouts a purple spinnaker for her downwind runs, so Papa Gaucho II's line should be purple. The other boats matter less. I'm going to make the next two closest competitors stand out a little as we are "keeping and eye" on them, but the other four boats matter much less. So let's keep their data there, but lets make it receed into the background:
 
-<img src="../assets/images/BotY/Chart_3.png" class="center" width="720"/><br> <br> <br>
+<img src="../assets/images/BotY/Chart_3.png" class="eighty_pct" width="720"/><br> <br> <br>
 
 The most important part of the story of the season is becoming much more clear. Polar Bear is leading the competition, with Papa Gaucho II close behind. Sixx and Ocelot are up there, and the other boats are almost background noise.
 
 Adjusting the line weights for Polar Bear and Papa Gaucho II further increases the emphasis on the two most important boats in this story:
 
-<img src="../assets/images/BotY/Chart_4.png" class="center" width="720"/><br> <br> <br>
+<img src="../assets/images/BotY/Chart_4.png" class="eighty_pct" width="720"/><br> <br> <br>
 
 Now it is time to solve some problems. The scale at the bottom is showing the different race events, but half of them are missing. Matplotlib is treating this axis like it is labeled with integers and we don't need to see everyone of those. This code will give us the correct number of ticks on the x-axis: 
 
@@ -83,24 +83,24 @@ Now it is time to solve some problems. The scale at the bottom is showing the di
 
 The last part of that method call will also tilt the text on a visually pleasing 45 degree angle so that they don't crowd one another quite so much.
 
-<img src="../assets/images/BotY/Chart_5.png" class="center" width="720"/><br> <br> <br>
+<img src="../assets/images/BotY/Chart_5.png" class="eighty_pct" width="720"/><br> <br> <br>
 
 We are still missing labels, but this code will fix that:
 
 `ax = plt.gca()
 ax.set_xticklabels(list(df_accumulated.index))`
 
-<img src="../assets/images/BotY/Chart_6.png" class="center" width="720"/><br> <br> <br>
+<img src="../assets/images/BotY/Chart_6.png" class="eighty_pct" width="720"/><br> <br> <br>
 
 One final tweak; the 45 degree angle of the text lables lead my eye to think that the end of the word is where the text should be, which is rather imprecise. Changing the rotation to 90 degrees is less visually elegant, but more precise and thus more useful:
 
-<img src="../assets/images/BotY/Chart_Final.png.png" class="center" width="720"/><br> <br> <br>
+<img src="../assets/images/BotY/Chart_Final.png" class="eighty_pct" width="720"/><br> <br> <br>
 
 This final chart is not only prettier than the Plotly boilerplate, but it communicates the story of the season much more effectively. In a presenation I could use this chart to illustrate the following observations:
--   We have clearly pulled ahead in this competition, but Gaucho is not far behind; we need to keep racing, and racing well. This is **not** the time to take our foot of the gas.
+-   We have clearly pulled ahead in this competition, but Gaucho is not far behind. We need to keep racing, and racing well. This is **not** the time to take our foot of the gas.
 -   That pair of offshore races to and from Knife River (where we took 2nd & 1st) really catapaulted us to the top of the heap. This is why they say, if you want to win Boat of the Year, **you need to race the entire calendar!**
 -   Tweety serves as the counter-example. They were in the hunt from the start, but then their line went flat for a few weeks when they were out of town for the Super Mac & Back solo race. You need to race the entire calendar to win Boat of the Year.
 
-The season is far from over, and with the weather getting ever-warmer the fleets get bigger for each race which means that more Boat of the Year points will be scored in the second half of the season relative to the first half of the season.
+The season is far from over, and with the weather getting ever-warmer, the fleets will get bigger for each race, which means that more Boat of the Year points will be scored in the second half of the season relative to the first half of the season.
 
 Fair winds and following seas to my fellow crewmates on Polar Bear. At least we know where we stand.
