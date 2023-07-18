@@ -1,7 +1,7 @@
 ---
 title: Charting Boat of the Year
 layout: post
-post-image: "../assets/images/milky_way_artistic.jpg"
+post-image: "../assets/images/BotY/Running_w_Scissors_artistic.JPEG"
 description: Little tweaks matter when telling a story
 tags:
 - data visualization
@@ -97,9 +97,9 @@ One final tweak; the 45 degree angle of the text lables lead my eye to think tha
 <img src="../assets/images/BotY/Chart_Final.png.png" class="center" width="720"/><br> <br> <br>
 
 This final chart is not only prettier than the Plotly boilerplate, but it communicates the story of the season much more effectively. In a presenation I could use this chart to illustrate the following observations:
--   We have clearly pulled ahead in this competition, but Gaucho is not far behind; we need to keep racing, and racing well.
--   That pair of offshore races to and from Knife River where we took 2nd & 1st really catapaulted us to the top of the heap. This is why they say, if you want to win Boat of the Year, **you need to race the entire calendar!**
--   The flip-side to this is the example of Tweety. They were in the hunt from the start, but then their line went flat for a few weeks when they were out of town for the Super Mac & Back solo race. You need to race the entire calendar to win Boat of the Year.
+-   We have clearly pulled ahead in this competition, but Gaucho is not far behind; we need to keep racing, and racing well. This is **not** the time to take our foot of the gas.
+-   That pair of offshore races to and from Knife River (where we took 2nd & 1st) really catapaulted us to the top of the heap. This is why they say, if you want to win Boat of the Year, **you need to race the entire calendar!**
+-   Tweety serves as the counter-example. They were in the hunt from the start, but then their line went flat for a few weeks when they were out of town for the Super Mac & Back solo race. You need to race the entire calendar to win Boat of the Year.
 
 The season is far from over, and with the weather getting ever-warmer the fleets get bigger for each race which means that more Boat of the Year points will be scored in the second half of the season relative to the first half of the season.
 
