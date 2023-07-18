@@ -2,7 +2,7 @@
 title: Talking Data to Non-Data Folks
 layout: post
 post-image: "../assets/images/milky_way_artistic.jpg"
-description: Communicating numbers by focusing on languate
+description: Communicating numbers by focusing on language
 tags:
 - quantitative reasoning
 - data science
