@@ -37,6 +37,10 @@ Each year the DYC organizes a series of more than 30 races between mid-May and m
 
 Boats and their crews score points in each race according to their finishing order, and awards are given for the top three boats in each series. But across the entire season points are also given in the **Boat of the Year** competition. Most crews do not actively pursue the Boat of the Year title for reasons that will soon become clear, but this year the boat I crew on, **Polar Bear**, is most definitely in the hunt.
 
+<figure>
+  <img src="../assets/images/BotY/PolarBear_2.jpg" alt="Sailboat" class="eighty_pct">
+  <figcaption>Fig. 1 - Polar Bear at full-cry</figcaption>
+</figure>
 
 ## Let's Build a Chart
 
@@ -67,13 +71,18 @@ My biggest issue with this line chart is the use of color. These colors are brig
 
 These colors are not helping to tell the story of the competition at this point in the season. If we assume that my audience for this chart is my skipper and the rest of the crew, then the fate of Polar Bear and its near-competitors matters more than the fate of most of the other boats. 
 
-Contrast will be important here, but so will connotation. Most of Polar Bear's spinnakers and decrorative accents are blue, and her deck is painted light blue. So her line on the chart should be blue. Our nearest competitor sprouts a purple spinnaker for her downwind runs, so Papa Gaucho II's line should be purple. The other boats matter less. I'm going to make the next two closest competitors stand out a little as we are "keeping and eye" on them, but the other four boats matter much less. So let's keep their data there, but lets make it receed into the background:
+<figure>
+  <img src="../assets/images/BotY/Gaucho_kite.JPG" alt="Sailboat" width=350>
+  <figcaption>Fig. 2 - Papa Gaucho II in downwind mode.</figcaption>
+</figure>
+
+Contrast will be important here, but so will connotation. Most of Polar Bear's spinnakers and decrorative accents are blue (fig 1), and her deck is painted light blue. So her line on the chart should be blue. Our nearest competitor sprouts a purple spinnaker (fig 2) for her downwind runs, so Papa Gaucho II's line should be purple. The other boats matter less. I'm going to make the next two closest competitors stand out a little as we are "keeping and eye" on them, but the other four boats matter much less. So let's keep their data there, but lets make it receed into the background:
 
 <img src="../assets/images/BotY/Chart_3.png" class="eighty_pct" width="720"/><br> <br> <br>
 
 The most important part of the story of the season is becoming much more clear. Polar Bear is leading the competition, with Papa Gaucho II close behind. Sixx and Ocelot are up there, and the other boats are almost background noise.
 
-Adjusting the line weights for Polar Bear and Papa Gaucho II further increases the emphasis on the two most important boats in this story:
+Adjusting the line weights for Polar Bear and Papa Gaucho II further increases the emphasis on the two most important boats in this story, and varying the line style for the green lines makes it easier to track those individual boats:
 
 <img src="../assets/images/BotY/Chart_4.png" class="eighty_pct" width="720"/><br> <br> <br>
 
@@ -99,7 +108,7 @@ One final tweak; the 45 degree angle of the text lables lead my eye to think tha
 This final chart is not only prettier than the Plotly boilerplate, but it communicates the story of the season much more effectively. In a presenation I could use this chart to illustrate the following observations:
 -   We have clearly pulled ahead in this competition, but Gaucho is not far behind. We need to keep racing, and racing well. This is **not** the time to take our foot of the gas.
 -   That pair of offshore races to and from Knife River (where we took 2nd & 1st) really catapaulted us to the top of the heap. This is why they say, if you want to win Boat of the Year, **you need to race the entire calendar!**
--   Tweety serves as the counter-example. They were in the hunt from the start, but then their line went flat for a few weeks when they were out of town for the Super Mac & Back solo race. You need to race the entire calendar to win Boat of the Year.
+-   Tweety and Narwhal serve as the counter-example. Both boats were in the hunt from the start, but then their lines went flat for a few weeks when they skipped multiple races. It would be extremely difficult for those boats to catch back up at this point. You need to race the entire calendar to win Boat of the Year.
 
 The season is far from over, and with the weather getting ever-warmer, the fleets will get bigger for each race, which means that more Boat of the Year points will be scored in the second half of the season relative to the first half of the season.
 
