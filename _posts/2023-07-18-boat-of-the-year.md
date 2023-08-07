@@ -109,6 +109,9 @@ This final chart is not only prettier than the Plotly boilerplate, but it commun
 -   We have clearly pulled ahead in this competition, but Gaucho is not far behind. We need to keep racing, and racing well. This is **not** the time to take our foot of the gas.
 -   That pair of offshore races to and from Knife River (where we took 2nd & 1st) really catapaulted us to the top of the heap. This is why they say, if you want to win Boat of the Year, **you need to race the entire calendar!**
 -   Tweety and Narwhal serve as the counter-example. Both boats were in the hunt from the start, but then their lines went flat for a few weeks when they skipped multiple races. It would be extremely difficult for those boats to catch back up at this point. You need to race the entire calendar to win Boat of the Year.
+-   Of course, that last point deserves a chart that tells its story a bit more clearly. Perhaps we will just adjust the line-weights:
+
+<img src="../assets/images/BotY/Narwhal_Tweety.png" class="eighty_pct" width="720"/><br> <br> <br>
 
 The season is far from over, and with the weather getting ever-warmer, the fleets will get bigger for each race, which means that more Boat of the Year points will be scored in the second half of the season relative to the first half of the season.
 
