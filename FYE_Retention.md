@@ -22,9 +22,13 @@ tags:
 
 ## Executive Summary: Enhancing Student Retention with Predictive Analytics
 
-Colleges and universities recognize the critical importance of first-to-second year student retention for sustaining consistent revenue streams. Improvements come when institutions proactively engage with students during their time on campus. However, such interventions come at a real-world cost, emphasizing the need for efficient allocation of resources. To achieve this, accurate prediction of which students are most likely to leave carries enormous value.
+Colleges and universities recognize the critical importance of first-to-second year student retention for sustaining consistent revenue streams. Improvements in retention are possible when institutions proactively engage with students during their time on campus. However, such interventions come at a real-world cost, emphasizing the need for efficient allocation of resources. To achieve this, accurate prediction of which students are most likely to leave carries enormous value.
 
-Traditional probability-based models fall short of providing actionable insights. This is where something like a neural network model shines, exhibiting a predictive power approximately 10% superior to demographic-based probability estimates. One critical factor in this success lies in the quality of the data utilized; focusing on the most predictive features yields significantly improved results. While further enhancements to the model are always possible, they largely depend on acquiring additional data relating to known retention factors such as financial aid status, mid-term academic performance, etc. 
+The traditional probability-based models, focusing primarily on demographic features, that institutions typically rely on are less predictive than they might seem. In this study the probability model's accuracy was only 61.4%. 
+
+A neural network model that included complex survey data relating to a student's sense of belonging as well as demographica features performed significantly better, exhibiting a predictive power nearly 10% better than demographic-based probability. 
+
+One critical factor in this success lies in the quality of the data utilized; focusing on the most predictive input features yielded significantly improved results with accuracy levels of nearly 70%. Further enhancements to the model are likely possible, but they largely depend on acquiring additional data features relating to known retention factors such as financial aid status and mid-term academic performance. 
 
 Fortunately, ongoing data collection efforts offer the opportunity to validate our initial findings. Should these results hold up, we can then compile a list of at-risk students while they are still on campus, presenting prime targets for timely and effective interventions. It may also be useful to build individual profiles for the students predicted to depart from the university. Such profiles may help university staff to tailor thier intervention efforts to suit each individual student.
 
@@ -34,7 +38,7 @@ In summary, our machine-learning approach to predicting student retention not on
 -   Predicting student behavior is extremely difficult; proceed with caution
 -   Improving the quality of the data is hugely influential.
 -   Building the survey with the analysis in mind is a best practice; keep iterating the survey.
--   This kind of data almost forces a model to overfit; knowing when to quit tuning is key.
+-   The complexity of the belonging-oriented data makes the model prone to overfitting; knowing when to quit tuning is key.
 -   Is the data from a belonging survey usefully predictive? **It Depends...**
 
 ## The Process
@@ -45,14 +49,14 @@ In summary, our machine-learning approach to predicting student retention not on
 
 There were two distinct phases to this work: data repair and dealing with null values. Both of these issues point toward issues with the survey itself.
 
-Data repair consisted of using other datasets to determine the identity of students based on bad ID numbers. The students' names & email addresses were used to locate the correct ID numbers. These ID numbers were critical because they are used to determine whether a student was retained for the following Fall semester. Some of this work was not easily automated and had to be done by hand.
+Data repair consisted of using other datasets to determine the identity of students who entered bad ID numbers. The students' names & email addresses were used to locate the correct ID numbers in other databases. These ID numbers were critical because they are used to determine whether or not a student was retained for the following Fall semester. Some of this work was not easily automated and had to be done by hand.
 
 Much of the remaining cleaning came down to dealing with null values. Since the survey did not require students to complete all of the questions (a clear flaw in the survey), there were numerous rows where values were simply missing. Since the dataset encompassed more than 80% of the students in the group to be studied, the fact that we lost 7% of the data through this first round of cleaning still leaves us with a highly-representative sample size.
 
 All data was converted to numeric values since that is what the Neural Network requires.
 
 ### Predictive Modeling with Probability Alone
-There is a clear difference between *identifying* the relative probability rates of student retention for different groups and *predicting* which individual students will depart. And that difference is fairly simple to calculate.
+There is a clear difference between **identifying** the relative probability rates of student retention for different groups and **predicting** which individual students will depart. And that difference is fairly simple to calculate.
 
  [Demographics-Prob_Model.ipynb](/FYE_Retention/Demographics-Prob_Model.ipynb)
 
@@ -63,20 +67,16 @@ There is a clear difference between *identifying* the relative probability rates
 > - First-Gen: 72%
 > - Not First-Gen: 79%
 
- That seems like a fairly significant difference, but it does not lead to an actionable prediction. 
+ That seems like a fairly significant difference, but it does not ultimately lead to a highly actionable prediction. 
 
- When we take this 72% retention rate and use it to try to predict which of the First-Gen students in the test-batch would actually come back the next year the results were unimpressive to say the least:  
+ When we take this 72% retention rate and use it to try to predict which of the First-Gen students in the test-batch would actually come back the next year the results were unimpressive:  
 
 |First Gen: 104  | Pred. Stay | Pred. Leave |
 | -------------- | ---------- | ----------- |
 |**Actual Stay** | 53         | 26          |
 |**Actual Leave**| 14         | 11          |
 
-**The "in the wild" accuracy of the prediction is only 61.5%!** Of the 25 first-gen students in this population who actually left, this algorithm only predicted 11 of them.
-
-The accuracy for the non-first-gen students was a little higher at 67%, which pulls the average predictive accuracy for this survey question up to 65%, but we are still not too far from coin-flipping.
-
-This pattern holds for pretty much all of the probabilities generated from studying demographic factors alone. 
+The model accurately predicted the retention status in 64 out of the 104 cases; **the overall accuracy of the prediction is only 61.5%!** Of the 25 first-gen students in this population who actually left, this algorithm only predicted 11 of them.
 
 Since the random splitting of the samples introduces some noise into the predictions, it is helpful to run this algorithm say 100 times, with a different randomly-split population each time, and then average the predictive accuracy results:
 
@@ -85,22 +85,8 @@ Since the random splitting of the samples introduces some noise into the predict
   <figcaption>Fig. 1 - Average accumulated accuracy of demographic probabilities over 100 iterations</figcaption>
 </figure>
 
-This chart shows that some of the demographic questions were significantly *less* predictive; a student's gender, or whether or not they lived on campus offered essentially no predictive power. Knowing which features in the dataset were most predictive is key to improving the performance of the model later on.
+This chart shows that some of the demographic questions were significantly *less* predictive; a student's gender, or whether or not they lived on campus offered essentially no predictive power. Knowing which features in the dataset were most predictive is key to improving the performance of the model later on, but **none of these features resulted in accuracy ratings as high as what could be achieved through other methods.**
 
-#### The Most Accurate Option is Useless
-
-The *best* questions perform no better than "probability alone," which is simply applying the overall retention rate of the population as a predictive tool. 
-
-In fact we can achieve a 75% accuracy rate, which is 10% better than using demographic probabilies, by simply guessing "Stay" in every instance:
-
-|Guessing 'Stay' | Pred. Stay | Pred. Leave |
-| -------------- | ---------- | ----------- |
-|**Actual Stay** | 353        | 0           |
-|**Actual Leave**| 118        | 0           |
-
-Of course, this would be a useless approach if what we are looking to do is to identify which students are likely to leave so that we can intervene in some way.
-
-**All of this makes it clear that predicting student behavior using probability alone is significantly harder than it might appear at first glance!**
 
 ### Experimenting with Logistic Regression
 
@@ -115,21 +101,21 @@ SciKitLearn has a well-developed algorithm for performing logistic regression an
 |**Actual Stay** | 352        | 5           |
 |**Actual Leave**| 112        | 2           |
 
-At this point the algorithm is little different from just guessing "stay" every time. If we play with the decision-threshold we can see something interesting happen:
+At this point the algorithm is little different from just guessing "stay" every time. If we experiment with different decision-thresholds we can see something interesting happen:
 
 <figure>
   <img src="/assets/images/FYE_NN/LogReg.png" alt="logistic regression" class="eighty_pct">
   <figcaption>Fig. 2 - Logistic regression outcomes over the full range of decision thresholds</figcaption>
 </figure>
 
-On the left side we are seeing an approach that equates to "Guess stay every time," and on the right you see "Guess leave every time. The zone in between is naturally where things get interesting. If you "tune" this algorithm you can get to a point where you are catching more of the "leaves than you are missing.
+On the left side we are seeing an approach that equates to "Guess stay every time," and on the right you see "Guess leave every time, neither of which results in an actionable prediction. The zone in between is where things get interesting. If you "tune" this algorithm you can get to a point where you are catching more of the "leaves than you are missing.
 
 |Threshold: 0.79 | Pred. Stay | Pred. Leave |
 | -------------- | ---------- | ----------- |
 |**Actual Stay** | 186        | 171         |
 |**Actual Leave**| 49         | 65          |
 
-On the one hand this is great because we are catching more "leaves" than we are missing, but in doing so we are predicting that nearly half of our students will leave, and so nearly 3/4 of the students we will be reaching out to will be wasted interventions! **The overall accuracy of this model is only 53%!**
+With the decision threshold at 0.79 we are catching more "leaves" than we are missing, but in doing so we are predicting that nearly half of our students will leave, and so nearly 3/4 of the students we will be reaching out to will be wasted interventions! **The overall accuracy of this model is only 53%!**
 
 ### Time for a Neural Network!
 
@@ -150,22 +136,22 @@ The results were predictably useless:
   <figcaption>Fig. 3 - A portrait in overfitting</figcaption>
 </figure>
 
-The loss figure for the training set descends nicely and the accuracy rating for the training set hits a perfect 100% after around 200 epochs. But the loss for the validation set goes through the roof, and the accuracy stagnates. Classic overfitting.
+The loss figure for the training set descends nicely and the accuracy rating for the training set hits a perfect 100% after around 200 epochs. But the loss for the validation set goes through the roof, and the validation accuracy stagnates, which is a clear indication that the model is overfitting.
 
 #### Model Tuning and Feature Selection
 
 [Neural_Net_Improved-Best_Data.ipynb](/FYE_Retention/Neural_Net_Improved-Best_Data.ipynb)
 
 After a great deal of experimentation, the following changes were made:
-- The top 15 "most predictive" feature inputs were identified and only those features were fed  into the model
+- Rather than using all 58 input features, the top 15 "most predictive" features were identified and only those features were fed  into the model
 - The number of nodes in the first layer was reduced to 8
-- L2 & Dropout regularization was applied to the first two layers
+- L2 & Dropout regularization was applied to the first two layers to control overfitting
 - The number of training epochs was reduced from 1000 to 100, which was the point where the validation loss seemed to hit its lowest point.
 
 These changes made a clear difference:
 
 <figure>
-  <img src="/assets/images/FYE_NN/TF_best_1.png" alt="neural net 2" class="eighty_pct">
+  <img src="/assets/images/FYE_NN/TF_best_1.1.png" alt="neural net 2" class="eighty_pct">
   <figcaption>Fig. 4 - Better?</figcaption>
 </figure>
 
@@ -179,6 +165,8 @@ We can also tune the decision threshold for the final sigmoid classification, bu
 </figure>
 
 If we want to make sure we catch *all* of the students who will be departing, we can set the threshold quite high, but we will be swamped with false-negative predictions. A decision threshold of 0.5 or lower has the opposite problem. 
+
+It is interesting to note that the dynamics in this chart are similar to those exhibited by the probability model (Fig 2), but the curves here are much more gradual. This allows for more opportunities for intelligent tuning.
 
 With the threshold set at 0.71, the number of false-positives & false-negatives balances out:
 
