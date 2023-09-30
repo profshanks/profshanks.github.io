@@ -8,7 +8,7 @@ menu: main
 <br><br>
 #### Actionable Insights from this Project:
 
--   Students from LSBE & SCSE are under entolling. We might want to market the courses more aggressively to those student populations
+-   Students from LSBE & SCSE are under enrolling. We might want to market the courses more aggressively to those student populations
 -   The students we helped the most...
 -   How did we help them?
 -   1 credit vs 3 credits
