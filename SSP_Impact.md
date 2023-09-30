@@ -82,21 +82,3 @@ Our dataset contained 745 rows, with 42 of those rows representing students wher
 
 
 [Link to Analysis 1](SSP_Impact/Analysis_1)
-
-<a href="https://lakesuperiornerr.org"><img src="../assets/images/lake-superior-reserve-rgb-logo.png" class="center" width="360"/></a> <br> <br> <br>
-
-<a href="https://coast.noaa.gov/nerrs/"><img src="../assets/images/NERR_system.png" width="700"/></a>
- 
-[a user-friendly website](https://gtmnerr.github.io/swmp-quarter-report/) 
-
-<a href="https://quarto.org"><img src="../assets/images/quarto.png"/></a>
-
-<img class="eighty_pct" src="../assets/images/GH_flowchart2.png"/>
-
-[Himeld23](https://github.com/Himeld23/Pure-Css-Carousel) ` tags, and then the system would then break down.
-
-<a href="https://shiny.rstudio.com"><img src="../assets/images/Logo_shiny.png" class="center"/></a>
-
-**Scientists really seem to have this kind of joyful energy...**<br> <iframe src="https://giphy.com/embed/ZqlvCTNHpqrio" width="480" height="259" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-
-<p><a href="https://giphy.com/gifs/laughing-despicable-me-minions-ZqlvCTNHpqrio">via GIPHY</a></p>
