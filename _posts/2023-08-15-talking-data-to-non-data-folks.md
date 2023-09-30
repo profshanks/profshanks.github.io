@@ -1,7 +1,7 @@
 ---
 title: Talking Data to Non-Data Folks
 layout: post
-post-image: "../assets/images/milky_way_artistic.jpg"
+post-image: "../assets/images/dancers.jpg"
 description: Communicating numbers by focusing on language
 tags:
 - quantitative reasoning
