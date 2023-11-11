@@ -3,15 +3,15 @@
   image: ../Bikes_Chicago/heatmap_hero.jpg
   description: An analysis of rental bike usage in the Chicago area
 
-- name: Student Success?
-  image: ../SSP_Impact/horiz_art.jpg
-  link: ../SSP_Impact
-  description: An exploration of the impact of 1000-level SSP courses on student success
-
 - name: Predicting First Year Retention
   link: ../FYE_Retention
   image: ../FYE_Retention/neural_net.png
   description: Can you use a neural network to predict First-Year student retention?
+
+- name: Student Success?
+  image: ../SSP_Impact/horiz_art.jpg
+  link: ../SSP_Impact
+  description: An exploration of the impact of 1000-level SSP courses on student success
 
 - name: 'ChatUMD'
   link:
