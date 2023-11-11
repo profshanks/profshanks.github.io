@@ -1,3 +1,8 @@
+- name: 'Big Bike Data'
+  link: ../Bikes_Chicago
+  image: ../Bikes_Chicago/heatmap_hero.jpg
+  description: An analysis of rental bike usage in the Chicago area
+
 - name: Student Success?
   image: ../SSP_Impact/horiz_art.jpg
   link: ../SSP_Impact
@@ -8,17 +13,7 @@
   image: ../FYE_Retention/neural_net.png
   description: Can you use a neural network to predict First-Year student retention?
 
-- name: 'Third Project: Big Bike Data'
-  link:
-  image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
-  description: An analysis of rental bike usage in the Chicago area
-
-- name: 'Fourth Project: ChatUMD'
+- name: 'ChatUMD'
   link:
   image: https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_960_720.jpg
-  description: Can we use a LLM to recover the experience of the analog college Course Catalog?
-
-- name: 'Fifth Project: 1100 Runs'
-  link:
-  image: ../assets/images/dirty_shoes.png
-  description: What can 1100 runs worth of data teach us?
+  description: Can we use a LLM to personalize the Course Catalog experience? (coming soon)
