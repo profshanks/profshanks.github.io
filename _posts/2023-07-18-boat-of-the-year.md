@@ -1,5 +1,5 @@
 ---
-title: Charting Boat of the Year
+title: Data Visualization for Sailors
 layout: post
 post-image: "../assets/images/BotY/Running_w_Scissors_artistic.JPEG"
 description: Small changes can matter a lot when telling a story with data
@@ -9,8 +9,23 @@ tags:
 - science communication
 ---
 
-Sailing is a strange world. It seems so simple. It's not. I am spellbound by sailing because of its complexity, and I am famous on my crew for nerding out about minutae that does not always make much difference in the race results. Knowing where to focus your efforts requires more experience than I have. I'm just the data nerd, my job is to provide timely information to the others on my team with more experience, so that they can make better decisions.
+Sailing is a strange world. It seems so simple. It's not. I am spellbound by sailing because of its complexity, and I am famous on my crew for nerding out about tech-oriented minutae that does not always make much difference in the race results. Knowing where to focus your efforts requires more experience than I have. I'm just the data nerd, my job is to provide timely information to the others on my team with more experience, so that they can make better decisions.
+
+This year started off well for team Polar Bear, and by about the half-way point it was clear that we were in the running for "Boat of the Year," but just how were we shaping up compared to the other boats? A teammate showed me a vanilla line-chart that was going around in the social-media-sphere; it was just a bunch of squiggles; I had a mission:
+
+**Create a chart that I can share with the team, optimized for phone-based viewing, that tells the story of the season, and supports intelligent decision-making.**
 <br>
+<p align="center">
+  <img src="../assets/images/BotY/Chart_1.png" alt="How it started..." width="41%" />
+  &nbsp; &nbsp; &nbsp; &nbsp; <!-- This is for spacing between images -->
+  <img src="../assets/images/BotY/Chart_Final.png" alt="How it's going..." width="49%" />
+</p>
+<p align="center">
+  <strong><em>Figure 1: How it started...</em></strong>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <!-- This is for spacing between captions -->
+  <strong><em>Figure 2: How it's going...</em></strong>
+</p>
+
 
 #### Sam's 5 key takeaways:
 

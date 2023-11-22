@@ -8,10 +8,10 @@
   image: ../FYE_Retention/neural_net.png
   description: Can you use a neural network to predict First-Year student retention?
 
-- name: Student Success?
-  image: ../SSP_Impact/horiz_art.jpg
-  link: ../SSP_Impact
-  description: An exploration of the impact of 1000-level SSP courses on student success
+- name: Tracing Climate Change
+  image: ../CO2_Data/hot_earth.png
+  link: ../CO2_Data
+  description: An interactive dashboard for visualizing the sources of CO2 in our atmosphere
 
 - name: 'ChatUMD'
   link:
