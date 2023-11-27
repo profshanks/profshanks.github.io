@@ -7,48 +7,32 @@ from holoviews import opts
 
 import hvplot.pandas
 
+
 import holoviews as hv
 hv.extension('bokeh')
 
-df = pd.read_csv('owid-co2-data.csv')
-
-# Fill NAs with 0's and create 'GDP per capita' column
-df = df.fillna(0)
-df['gdp_per_capita'] = np.where(df['population']!=0, df['gdp']/df['population'], 1)
-
-df['country'] = df['country'].astype('category')
-
 select_countries = ['Algeria', 'Argentina', 'Australia', 'Austria', 'Bangladesh', 'Belgium', 'Brazil', 'Canada', 'Chile', 'China', 
-                    'Colombia', 'Egypt', 'France', 'Germany', 'Hong Kong', 'India', 'Indonesia', 'Iran', 'Iraq', 'Italy', 'Japan', 
+                    'Colombia', 'Egypt', 'France', 'Germany', 'India', 'Indonesia', 'Iran', 'Iraq', 'Italy', 'Japan', 
                     'Kazakhstan', 'Malaysia', 'Mexico', 'Netherlands', 'Nigeria', 'Norway', 'Pakistan', 'Peru', 'Philippines', 
-                    'Poland', 'Qatar', 'Romania', 'Russia', 'Saudi Arabia', 'Singapore', 'South Africa', 'South Korea', 'Spain', 
-                    'Sweden', 'Switzerland', 'Taiwan', 'Thailand', 'Turkey', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 
+                    'Poland', 'Romania', 'Russia', 'Saudi Arabia', 'South Africa', 'South Korea', 'Spain', 
+                    'Sweden', 'Switzerland', 'Taiwan', 'Thailand', 'Turkey', 'Ukraine', 'United Kingdom', 
                     'United States', 'Venezuela', 'Vietnam']
 continents = ['World', 'Europe', 'North America', 'South America', 'Asia', 'Africa', 'Oceania']
 all_select = select_countries + continents
 
-df_select = df[df['country'].isin(all_select)]
-
-df_select.to_csv('select_countries.csv', index=False)
-
 select = pd.read_csv('select_countries.csv')
-
-# Filter the original DataFrame for rows where 'country' matches any of the names in the continents list
-df_continents = df[df['country'].isin(continents)]
-
-df_continents = df_continents.set_index('country').loc[continents].reset_index()
-
-c_list = df_select['country'].unique().to_list()
 
 select_order = ['World', 'Europe', 'North America', 'South America', 'Asia', 'Africa', 'Oceania', 
                 'Algeria', 'Argentina', 'Australia', 'Austria', 'Bangladesh', 'Belgium', 'Brazil', 'Canada', 'Chile', 
-                'China', 'Colombia', 'Egypt', 'France', 'Germany', 'Hong Kong', 'India', 'Indonesia', 'Iran', 'Iraq', 'Italy', 'Japan', 
+                'China', 'Colombia', 'Egypt', 'France', 'Germany', 'India', 'Indonesia', 'Iran', 'Iraq', 'Italy', 'Japan', 
                 'Kazakhstan', 'Malaysia', 'Mexico', 'Netherlands', 'Nigeria', 'Norway', 'Pakistan', 'Peru', 'Philippines', 
-                'Poland', 'Qatar', 'Romania', 'Russia', 'Saudi Arabia', 'Singapore', 'South Africa', 'South Korea', 'Spain', 'Sweden', 
-                'Switzerland', 'Taiwan', 'Thailand', 'Turkey', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Venezuela', 'Vietnam']
+                'Poland', 'Romania', 'Russia', 'Saudi Arabia', 'South Africa', 'South Korea', 'Spain', 'Sweden', 
+                'Switzerland', 'Taiwan', 'Thailand', 'Turkey', 'Ukraine', 'United Kingdom', 'United States', 'Venezuela', 'Vietnam']
+
 
 # Some minor data preprocessing
-select = select.set_index('country').loc[all_select].reset_index()
+
+select = select.set_index('country').loc[select_order].reset_index()
 
 # Make Dataframe Pipeline Interactive
 idf = select.interactive()
@@ -67,8 +51,8 @@ yaxis_co2 = pn.widgets.RadioButtonGroup(
 
 co2_pipeline = (
     idf[
-        (idf.year <= year_slider) &
-        (idf.country.isin(continents))
+        (idf.country.isin(continents) &
+        (idf.year <= year_slider))
     ]
     .groupby(['country', 'year'])[yaxis_co2].mean()
     .to_frame()
@@ -76,6 +60,7 @@ co2_pipeline = (
     .sort_values(by='year')
     .reset_index(drop=True)
 )
+
 
 co2_plot = co2_pipeline.hvplot(x = 'year', by='country', y=yaxis_co2, line_width=2, title="CO2 Emissions by Continent")
 co2_plot = co2_plot.opts(toolbar=None)
@@ -94,8 +79,14 @@ co2_table = filtered_data.pipe(pn.widgets.Tabulator,
                                sizing_mode='stretch_width',
                                show_index=False,
                                formatters=tabulator_formatters) 
-
 # CO2 vs GDP scatterplot
+
+# Radio buttons for Scatterplot
+scatter_select = pn.widgets.RadioButtonGroup(
+    name='country_select',
+    options=['All Nations', 'Minus Big 5'],
+    button_type='success'
+)
 
 just_countries = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua and Barbuda', 'Argentina', 
                       'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 
@@ -122,6 +113,7 @@ just_countries = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Ang
                       'Tanzania', 'Thailand', 'Timor', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 
                       'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 
                       'Vanuatu', 'Venezuela', 'Vietnam', 'Wallis and Futuna', 'Yemen', 'Zambia', 'Zimbabwe']
+
 
 yaxis_co2_source = pn.widgets.RadioButtonGroup(
     name='Y axis', 
@@ -174,6 +166,8 @@ co2_source_bar_plot = co2_source_bar_pipeline.hvplot(kind='bar',
                                                      rot=45)
 co2_source_bar_plot = co2_source_bar_plot.opts(toolbar=None)
 
+# Creating the dashboard
+
 # Building the dashboard
 
 # Define the CSS for the sidebar
@@ -211,5 +205,4 @@ template = pn.template.FastListTemplate(
     header_background="#6d021b"
 )
 
-# template.show()
 template.servable();
