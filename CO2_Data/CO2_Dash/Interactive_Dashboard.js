@@ -53,18 +53,6 @@ init_doc()
 # In[1]:
 
 
-#!pip install --upgrade panel
-
-
-# In[2]:
-
-
-#!panel --version
-
-
-# In[3]:
-
-
 import pandas as pd
 import numpy as np
 import panel as pn
@@ -75,32 +63,14 @@ from holoviews import opts
 import hvplot.pandas
 
 
-# In[4]:
+# In[2]:
 
 
 import holoviews as hv
 hv.extension('bokeh')
 
 
-# In[5]:
-
-
-#df = pd.read_csv('https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.csv')
-
-
-# df = pd.read_csv('owid-co2-data.csv')
-
-# df
-
-# df.columns
-
-# # Fill NAs with 0's and create 'GDP per capita' column
-# df = df.fillna(0)
-# df['gdp_per_capita'] = np.where(df['population']!=0, df['gdp']/df['population'], 1)
-
-# df['country'] = df['country'].astype('category')
-
-# In[6]:
+# In[15]:
 
 
 select_countries = ['Algeria', 'Argentina', 'Australia', 'Austria', 'Bangladesh', 'Belgium', 'Brazil', 'Canada', 'Chile', 'China', 
@@ -113,28 +83,12 @@ continents = ['World', 'Europe', 'North America', 'South America', 'Asia', 'Afri
 all_select = select_countries + continents
 
 
-# df_select = df[df['country'].isin(all_select)]
-# df_select.shape
-
-# df_select.to_csv('select_countries.csv', index=False)
-
-# In[7]:
+# In[3]:
 
 
 select = pd.read_csv('select_countries.csv')
 select.shape
 
-
-# # Define the list of continents
-# #continents = ['World', 'Europe', 'North America', 'South America', 'Asia', 'Africa', 'Oceania', 'Antarctica']
-# 
-# # Filter the original DataFrame for rows where 'country' matches any of the names in the continents list
-# df_continents = df[df['country'].isin(continents)]
-# 
-# df_continents = df_continents.set_index('country').loc[continents].reset_index()
-
-# c_list = df_select['country'].unique().to_list()
-# print(c_list)
 
 # In[8]:
 
@@ -148,12 +102,6 @@ select_order = ['World', 'Europe', 'North America', 'South America', 'Asia', 'Af
 
 
 # # Some minor data preprocessing
-
-# In[27]:
-
-
-#select.country.unique()
-
 
 # In[10]:
 
@@ -190,7 +138,7 @@ yaxis_co2 = pn.widgets.RadioButtonGroup(
 )
 
 
-# In[14]:
+# In[16]:
 
 
 #continents = ['World', 'Europe', 'North America', 'South America', 'Asia', 'Africa', 'Oceania', 'Antarctica']
@@ -208,13 +156,13 @@ co2_pipeline = (
 )
 
 
-# In[15]:
+# In[17]:
 
 
 co2_pipeline
 
 
-# In[16]:
+# In[18]:
 
 
 co2_plot = co2_pipeline.hvplot(x = 'year', by='country', y=yaxis_co2, line_width=2, title="CO2 Emissions by Continent")
@@ -224,13 +172,13 @@ co2_plot
 
 # # CO2 emission over time by continent
 
-# In[17]:
+# In[19]:
 
 
 filtered_data = co2_pipeline[co2_pipeline.year == year_slider]
 
 
-# In[18]:
+# In[20]:
 
 
 tabulator_formatters = {
@@ -240,7 +188,6 @@ tabulator_formatters = {
 co2_table = filtered_data.pipe(pn.widgets.Tabulator, 
                                pagination='remote', 
                                page_size = 10, 
-                               sizing_mode='stretch_width',
                                show_index=False,
                                formatters=tabulator_formatters) 
 co2_table
@@ -255,7 +202,7 @@ co2_table
 #     button_type='success'
 # )
 
-# In[19]:
+# In[21]:
 
 
 just_countries = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua and Barbuda', 'Argentina', 
@@ -285,7 +232,7 @@ just_countries = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Ang
                       'Vanuatu', 'Venezuela', 'Vietnam', 'Wallis and Futuna', 'Yemen', 'Zambia', 'Zimbabwe']
 
 
-# In[20]:
+# In[22]:
 
 
 yaxis_co2_source = pn.widgets.RadioButtonGroup(
@@ -295,7 +242,7 @@ yaxis_co2_source = pn.widgets.RadioButtonGroup(
 )
 
 
-# In[21]:
+# In[23]:
 
 
 co2_vs_gdp_scatterplot_pipeline = (
@@ -312,7 +259,7 @@ co2_vs_gdp_scatterplot_pipeline = (
 )
 
 
-# In[22]:
+# In[24]:
 
 
 co2_vs_gdp_scatterplot = co2_vs_gdp_scatterplot_pipeline.hvplot(x='gdp_per_capita', 
@@ -329,7 +276,7 @@ co2_vs_gdp_scatterplot
 
 # # Bar chart with CO2 sources by continent
 
-# In[23]:
+# In[25]:
 
 
 co2_source_bar_pipeline = (
@@ -345,13 +292,13 @@ co2_source_bar_pipeline = (
 )
 
 
-# In[24]:
+# In[26]:
 
 
-#print(type(co2_source_bar_pipeline))
+print(type(co2_source_bar_pipeline))
 
 
-# In[25]:
+# In[27]:
 
 
 co2_source_bar_plot = co2_source_bar_pipeline.hvplot(kind='bar', 
@@ -366,7 +313,7 @@ co2_source_bar_plot
 
 # # Creating the dashboard
 
-# In[26]:
+# In[28]:
 
 
 # Building the dashboard
@@ -398,16 +345,22 @@ template = pn.template.FastListTemplate(
                               'see what you might learn!'), 
              ],
     main=[pn.Row(pn.Column(yaxis_co2, 
-                           co2_plot.panel(width=500), margin=(0,10)), 
-                 co2_table.panel(width=350)), 
-          pn.Row(pn.Column(yaxis_co2_source, co2_vs_gdp_scatterplot.panel(width=450), margin=(0,10)), 
-                 pn.Column(co2_source_bar_plot.panel(width=400)))],
+                           co2_plot.panel(sizing_mode='fixed', width=500, height=300), margin=(0,10)), 
+                           co2_table.panel(sizing_mode='fixed', width=350, height=300)), 
+          pn.Row(pn.Column(yaxis_co2_source, co2_vs_gdp_scatterplot.panel(sizing_mode='fixed', width=450, height=300), margin=(0,10)), 
+                 pn.Column(co2_source_bar_plot.panel(sizing_mode='fixed', width=400, height=300)))],
     accent_base_color="#2f474a",
     header_background="#6d021b"
 )
 
 # template.show()
 template.servable();
+
+
+# In[ ]:
+
+
+
 
 
 
