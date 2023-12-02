@@ -4,7 +4,7 @@ layout: page
 menu: main
 ---
 
-<img src="/Bikes_Chicago/white_sunglasses3.jpg" width=360>
+<img src="/Bikes_Chicago//heat_circles_1.png" width=360>
 <br><br>
 
 #### Fast Facts:
@@ -143,15 +143,15 @@ If we flip dial the calendar back by six months and look only at the month of Ja
 
 If the casual ridership correlates strongly with trourist/leisure activity, then ther should be a clear geographical difference in the ridership as compared to the commuter-oriented members. There **is** a discernable difference (Fig 7), but it has some surprises.
 
-<img src="/Bikes_Chicago/heat_mem_cas.png" width=720>
+<img src="/Bikes_Chicago/heat_circles_1.png" width=720>
 <p style="text-align: left;">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<strong>Figure 7: Heatmap of ridership activity between members and casual riders</strong></p>
+<strong>Figure 7: Heatmap of ridership activity between members (left) and casual riders (right)</strong></p>
 
 One would expect that casual usage would be concentrated near the tourist center along the lake front, and there is a clear concentration of activity near the lake, but that concentration pattern aligns with similar areas of peak activity for the members as well. Surprisingly, the greatest distinction between these two groups is actually in the outlying regions. Casual ridership is significantly more pronounced to the south, southwest, and west of the loop as compared to the members. Perhaps the 'Casual' riders are not really the tourists after all!
 
-<img src="/Bikes_Chicago/wealth_dist.png" width=540>
+<img src="/Bikes_Chicago/wealth_dist_circles.png" width=540>
 <p style="text-align: left;">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
