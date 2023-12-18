@@ -1,5 +1,5 @@
 ---
-title: Contending with Complexity in Higher Ed.
+title: Data Science for All; Balancing Clarity with Complexity in Higher Ed.
 layout: post
 post-image: "../assets/images/milky_way_artistic.jpg"
 description: A brief exploration of the limits of human cognition when it comes to data

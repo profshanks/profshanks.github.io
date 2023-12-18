@@ -1,18 +1,18 @@
 ---
-title: Big Bike Data; an Analysis of Rental Bike Usage in the Chicago Area
+title: Big Bike Data; an Exploratory Analysis of Rental Bike Usage in the Chicago Area
 layout: page
 menu: main
 ---
 
-<img src="/Bikes_Chicago//heat_circles_1.png" width=360>
-<br><br>
+<img src="/Bikes_Chicago//heat_circles_1.png" align="left" width=420 style="margin-right: 30px;">
 
 #### Fast Facts:
 - Dates covered: December 1, 2021 - Nov 30, 2022
 - Rides recorded: 5,733,451
-- Ratio of rides by members vs by casual users: 3:2
-- Average ride duration: 19 min, 25 seconds
 - Number of data features: 14
+- Ratio of rides by members vs by casual users: 3:2
+- Ratio of e-bike vs "classic" bike rentals: 1:1
+- Average ride duration: 19 min, 25 seconds
 - Total duration of all rides: 211 years, 304 days, 3 hrs, 43 min, 10 sec.
 
 
@@ -21,19 +21,27 @@ menu: main
 
 ## Executive Summary
 
-#### Context
+#### The Charge
+Given 12 months of user data, look for patterns and insights that might help to expand membership, stabilize revenues, and control operating costs.
+
+<br>
+#### Insights:
+- [There are some interesting geographical differences between members and casual riders. Many of the areas with relatively large proportions of casual riders are areas that feature higher proportions of non-white residents and lower household income levels.](#Insight_1)
+- [A relatively small number of the bike stations generate the majority of the "abandoned" e-bikes that need to be collected by company personnel.](#Insight_2)
+- [Some stations are "self-balancing" with roughly the same number of bikes departing and arriving each day. Other stations require active inventory balancing by company personnel.](#Insight_3)
+
+<br>
+#### Recommendations:
+- Marketing that seeks to shift more casual riders to full membership should consider featuring imagery from the neighborhoods identified as having higher proportions of casual riders. That marketing could also valorize the fiscal wisdom of bike-commuting. Given the highly euro-centric image of cycling in the broader culture, capturing the look and feel of the Chicago that exists beyond the tourist brocures could also be an opportunity for the company to distinguish it self from its competitors. Incentives to ease the transition to membership from a cash-flow perspective might be considered as well.
+- The company may want to compile a list of the stations that seem to generate the most work for company personnel in terms of recovering "abandoned" e-bikes and balancing daily patterns of inventory-drift. When financial headwinds begin to blow, these stations should be considered the first to go, with the inventory and equipment then moved to stations that "self-balance" in terms of inventory and that are less likely to generate "abandoned" e-bikes in need of attention by company personnel. This might allow the company to retain the majority of its revenue while shedding personnel costs.
+
+<hr class="has-background-black">
+## Process Notes
+
+### The Data
 The data utilized for this project was obtained from a bicycle rental company called Divvy that operates in the Chicago area. Their publically available data [can be found on their website](https://divvybikes.com/system-data). With more than 5 million observations over the course of a full calendar year, this dataset is reasonably large and, despite the limited set of features, there are a number of business intelligence questions that can be asked with potentially actionable insights emerging as a result. 
 
-This report is purely hypothetical, but I am approaching the project as if I were an external job candidate being asked for a general set of business recommendations based on this limited dataset. I am assuming that I would only have a few days to engage with the dataset and to produce this report. 
-
-<br>
-#### Objectives:
-- Use the dataset to describe the behavior of the customers on a general level
-- Identify 3 actionable business insights that arise from the data
-
-<br>
-#### Data Features
-The data represented here is somewhat basic:  
+The data features contained here are somewhat basic:  
 - Start/End day & time for each trip  
 - Start/End station names and ID numbers
 - Start/End latitude & longitude
@@ -41,14 +49,7 @@ The data represented here is somewhat basic:
 - Equipment used (classic bike vs e-bike)
 
 <br>
-#### Actionable Insights from this Project:
-
-- [Member usage vs casual usage is interesting, and has some unexpected marketing implications.](#Insight_1)
-- [Move e-bikes away from "high-chaos" stations to save on operating costs.](#Insight_2)
-- [Closing inefficient stations may be a necessary option to save on payroll when things get tight.](#Insight_3)
-
-<br><br>
-## Data Tools & Preparation
+### Data Tools & Preparation
 
 #### Analytical Tools/Packages:
 - Pandas
@@ -58,7 +59,7 @@ The data represented here is somewhat basic:
 - Folium
 
 <br>
-#### Data Cleaning & Preparation
+#### Data Cleaning
 - Data was exceptionally clean
 - Missing values indicated e-bike rides that started or ended away from an established station
 
@@ -72,9 +73,11 @@ The data represented here is somewhat basic:
 
 
 <hr class="has-background-black">
+
 # Lines of Inquiry
 <a name="Insight_1"></a>
-<br><br>
+<br>
+
 ### How does bike usage among members differ from casual riders?
 
 Riders who are subscribed members of the Divvy program account for around 60% of all rides, with their usage split fairly evenly between classic and electric bikes (Fig 1). Casual riders favor e-bikes a bit more strongly, accounting for approximately 3:5 of casual rides.
@@ -171,9 +174,8 @@ This has clear implications for how this company might choose to market itself t
 
 [Bikes_Mapping](/Bikes_Chicago/Bikes_Mapping.ipynb)
 
-
 <a name="Insight_2"></a>
-<br><br>
+<br>
 
 ### Minimizing Abandoned Bikes
 E-Bikes are wonderful things and they represent a little over 50% of the rides in the study. E-bikes have the advantage of being electronically lockable, which means that they do not need to be secured into a docking station like the classic bikes do. A rider can simply hop off, log off and walk away. Similarly, they can be accessed from anywhere using the company's app; customers can use the app to locate a nearby e-bike and to unlock it if they so choose.
@@ -209,7 +211,7 @@ There seems to be a real opportunity here to optimize the placement of e-bikes s
 [Abandoned_e-Bikes.ipynb](/Bikes_Chicago/Abandoned_e-Bikes.ipynb)
 
 <a name="Insight_3"></a>
-<br><br>
+<br>
 
 ### Identifying High-Value Stations
 At some point an organization is going to hit some difficulties. Recessions, supply-chain SNAFUs, and aging equipment can and will make things difficult at some point. Having some recommendations already in-place for effective ways to weather those periods of fiscal pain is a good idea.

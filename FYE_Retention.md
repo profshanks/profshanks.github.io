@@ -12,15 +12,39 @@ tags:
 - First-Year Retention
 ---
 
-<img src="/FYE_Retention/neural_net.png" width=360>
-<br><br>
+<img src="/FYE_Retention/neural_net.png" width=360 align="left" style="margin-right: 30px;">
+<br>
 
 # Can a belonging survey & a neural network predict first-year student retention?  
-<br>
+<br><br>
 
 <hr class="has-background-black">
 
-## Executive Summary: Enhancing Student Retention with Predictive Analytics
+## Executive Summary
+
+#### The Charge
+Build a neural network that can predict whether First-Year college students will return to campus for the following Fall semester, using data from class surveys including a series of multi-dimensional questions relating to their sense of belonging.
+
+<br>
+#### Insights:
+- [Predicting student behavior is extremely difficult; proceed with caution.](#Insight_1)
+- [A neural network outperformed both logistic regression and probablility-based methods.](#Insight_2)
+- [Improving the quality of the data is hugely influential.](#Insight_3)
+- [The complexity of the belonging-oriented data makes the model prone to overfitting; knowing when to quit tuning is key.](#Insight_4)
+
+<br>
+#### Recommendations:
+- Feeding the most predictive data features into the neural network is extremely important, and significantly helps to prevent overfitting. The data can, and should come from a variety of areas including demographics, financial, attitudinal survey data like the one featured here, as well as academic performance data.
+- Building the survey with the analysis in mind is a best practice; keep iterating the survey.
+- One of the keys to solving the overfitting is to make compromises in terms of accuracy in the training phase.
+- This is just a tool to guide interventions, therefore institutions need to assess the limits of their resources, and then adjust the decision threshold for the model in order to generate a list of the students most likely to depart that aligns with the number of students that the school is resourced to support appropriately.
+- With better data, it might be possible to use the model to not only predict if a student is a retention risk, but also what their specific risk profile looks like. This may further help the university to target its intervention approach.
+
+
+
+<hr class="has-background-black">
+
+## Context 
 
 Colleges and universities recognize the critical importance of first-to-second year student retention for sustaining consistent revenue streams. Improvements in retention are possible when institutions proactively engage with students during their time on campus. However, such interventions come at a real-world cost, emphasizing the need for efficient allocation of resources. To achieve this, accurate prediction of which students are most likely to leave carries enormous value.
 
@@ -34,14 +58,8 @@ Fortunately, ongoing data collection efforts offer the opportunity to validate o
 
 In summary, our machine-learning approach to predicting student retention not only outperforms traditional methods, but also holds the potential for transformative impact. We can bolster student success, bolster institutional stability, and secure a brighter future for both students and the institution.
 
-#### Actionable Insights from this Project:
--   Predicting student behavior is extremely difficult; proceed with caution
--   Improving the quality of the data is hugely influential.
--   Building the survey with the analysis in mind is a best practice; keep iterating the survey.
--   The complexity of the belonging-oriented data makes the model prone to overfitting; knowing when to quit tuning is key.
--   Is the data from a belonging survey usefully predictive? **It Depends...**
 
-## The Process
+## Before We Build the Model
 
 ### Cleaning the Data
 
@@ -54,6 +72,9 @@ Data repair consisted of using other datasets to determine the identity of stude
 Much of the remaining cleaning came down to dealing with null values. Since the survey did not require students to complete all of the questions (a clear flaw in the survey), there were numerous rows where values were simply missing. Since the dataset encompassed more than 80% of the students in the group to be studied, the fact that we lost 7% of the data through this first round of cleaning still leaves us with a highly-representative sample size.
 
 All data was converted to numeric values since that is what the Neural Network requires.
+
+<a name="Insight_1"></a>
+<br>
 
 ### Predictive Modeling with Probability Alone
 There is a clear difference between **identifying** the relative probability rates of student retention for different groups and **predicting** which individual students will depart. And that difference is fairly simple to calculate.
@@ -87,6 +108,8 @@ Since the random splitting of the samples introduces some noise into the predict
 
 This chart shows that some of the demographic questions were significantly *less* predictive; a student's gender, or whether or not they lived on campus offered essentially no predictive power. Knowing which features in the dataset were most predictive is key to improving the performance of the model later on, but **none of these features resulted in accuracy ratings as high as what could be achieved through other methods.**
 
+<a name="Insight_2"></a>
+<br>
 
 ### Experimenting with Logistic Regression
 
@@ -117,6 +140,7 @@ On the left side we are seeing an approach that equates to "Guess stay every tim
 
 With the decision threshold at 0.79 we are catching more "leaves" than we are missing, but in doing so we are predicting that nearly half of our students will leave, and so nearly 3/4 of the students we will be reaching out to will be wasted interventions! **The overall accuracy of this model is only 53%!**
 
+
 ### Time for a Neural Network!
 
 Thus far we have not really engaged with the data from the survey that attempts to get at the students' sense of belonging, and a neural network is a highly appropriate tool for running binary classification on that kind of data. The data is subjective, but that does not mean that we cannot attempt to pull objecive trends out of that data; Netflix does this all the time!
@@ -137,6 +161,9 @@ The results were predictably useless:
 </figure>
 
 The loss figure for the training set descends nicely and the accuracy rating for the training set hits a perfect 100% after around 200 epochs. But the loss for the validation set goes through the roof, and the validation accuracy stagnates, which is a clear indication that the model is overfitting.
+
+<a name="Insight_3"></a>
+<br>
 
 #### Model Tuning and Feature Selection
 
@@ -177,6 +204,8 @@ With the threshold set at 0.71, the number of false-positives & false-negatives 
 
 At this point, the model's predictive accuracy is right at about 70%, which is a good bit better than just raw probability alone (61.4%). 
 
+<a name="Insight_4"></a>
+<br>
 
 ### Knowing When to Quit
 Andrew Ng (aka: The Godfather of Machine Learning) has frequently pointed out that when it comes to machine learning, tuning will only get you so far, and your time might be better spend sourcing higher-quality data rather than experimenting endlessly with tuning parameters. In this case, the best results came when we selected for the most predictive features and then were humble in the way we tuned the model

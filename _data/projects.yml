@@ -1,7 +1,7 @@
 - name: 'Big Bike Data'
   link: ../Bikes_Chicago
   image: ../Bikes_Chicago/heatmap_hero.jpg
-  description: An analysis of rental bike usage in the Chicago area
+  description: An Exploratory Analysis of Rental Bike Usage in the Chicago Area
 
 - name: Predicting First Year Retention
   link: ../FYE_Retention
@@ -9,8 +9,8 @@
   description: Can you use a neural network to predict First-Year student retention?
 
 - name: Tracing Climate Change
+  link: ../Global_CO2_Data
   image: ../CO2_Data/hot_earth.png
-  link: ../CO2_Data
   description: An interactive dashboard for visualizing the sources of CO2 in our atmosphere
 
 - name: 'ChatUMD'
