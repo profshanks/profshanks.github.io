@@ -2,7 +2,7 @@
 title: The Data Wrangling Blues
 layout: post
 post-image: "../assets/images/data_wrangling/DataWranglingBlues_2.png"
-description: Sometimes you have to fight to get your high-quality data
+description: Sometimes you have to fight to get your high-quality data...
 tags:
 - data wrangling
 - web scraping
