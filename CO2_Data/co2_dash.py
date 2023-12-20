@@ -3,12 +3,9 @@ import numpy as np
 import panel as pn
 pn.extension('tabulator')
 
-from holoviews import opts
-
 import hvplot.pandas
-
-
 import holoviews as hv
+from holoviews import opts
 hv.extension('bokeh')
 
 select_countries = ['Algeria', 'Argentina', 'Australia', 'Austria', 'Bangladesh', 'Belgium', 'Brazil', 'Canada', 'Chile', 'China', 
